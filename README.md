@@ -1,4 +1,8 @@
 # CppNotes
-A collection of structured notes on C++ fundamentals, advanced features, and interview topics. Suitable for review, learning, and technical reference.
+## 📘 English
 
-一份关于 C++ 基础、进阶特性和面试知识点的结构化笔记合集，适合复习、学习与技术查阅。
+This repository contains a well-organized set of C++ notes covering syntax, object-oriented programming, STL, memory management, templates, multithreading, and common interview questions. It serves as a personal study reference and may also help other learners and developers prepare for interviews or improve their C++ skills.
+
+## 📘 中文说明
+
+本仓库收录了一套系统整理的 C++ 学习笔记，涵盖语法基础、面向对象编程、STL 标准库、内存管理、模板编程、多线程与常见面试题，既作为作者的学习资料，也希望能帮助其他开发者进行面试准备或提升 C++ 技能。
