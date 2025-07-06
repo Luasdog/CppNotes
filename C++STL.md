@@ -165,7 +165,7 @@ void introsort(RandomIt first, RandomIt last, int depth_limit) {
 
 ### **简化版的 `std::sort` 实现**
 
-使用的是 **Introsort** 思想（快速排序为主，回退到堆排序，处理小数组用插入排序）。这只是教学用途，真实标准库实现更复杂、更优化。
+使用的是 **Introsort** 思想（快速排序为主，回退到堆排序，处理小数组用插入排序）。真实标准库实现更复杂、更优化。
 
 ---
 
@@ -268,8 +268,6 @@ int main() {
 
 ---
 ##  `std::sort` 使用自定义比较器
-
----
 
 ### 1. 使用 lambda 表达式的方式：
 
@@ -380,5 +378,75 @@ std::fill(nums.begin() + 2, nums.begin() + 5, 42);  // 填充第3~5个元素为4
 
 * `std::fill_n(first, count, value)`：从 `first` 开始，连续填 `count` 个值为 `value`
 * `std::iota(first, last, start)`：从 `start` 开始，递增赋值，比如 0,1,2,...
+
+---
+
+## `reserver()` 和 `resize()`
+常用的 C++ STL 容器（主要是 `vector`）成员函数或算法函数
+---
+### **1. reserve()**
+
+**作用**：
+
+* **预留容量**，改变容器的 **capacity**，但不改变 **size**。
+
+ **使用场景**：
+
+* 提前分配内存，避免多次扩容，提升 push\_back 时的性能。
+
+**例子**：
+
+```cpp
+#include <vector>
+#include <iostream>
+using namespace std;
+
+int main() {
+    vector<int> v;
+    v.reserve(100); // 预留容量为100，v.size() 仍然是 0
+
+    cout << "v.size(): " << v.size() << endl;       // 0
+    cout << "v.capacity(): " << v.capacity() << endl; // >=100
+
+    return 0;
+}
+```
+---
+
+### **2. resize()**
+
+**作用**：
+
+* 改变容器的 **size（大小）**。
+* 如果变大，会在末尾插入默认值（对 `int` 为 0）。
+* 如果变小，会丢弃末尾的元素。
+
+**例子**：
+
+```cpp
+#include <vector>
+#include <iostream>
+using namespace std;
+
+int main() {
+    vector<int> v = {1, 2, 3};
+    v.resize(5); // 变成 {1,2,3,0,0}
+    
+    for (int x : v) cout << x << " ";
+    cout << endl;
+
+    v.resize(2); // 变成 {1,2}
+    for (int x : v) cout << x << " ";
+    cout << endl;
+
+    return 0;
+}
+```
+### **总结**
+
+| 函数        | 所在位置          | 作用                  |
+| --------- | ------------- | ------------------- |
+| reserve() | vector成员函数    | 预留容量，不改变元素个数        |
+| resize()  | vector成员函数    | 改变元素个数，可能插入默认值或删除元素 |
 
 ---
