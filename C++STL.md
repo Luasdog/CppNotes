@@ -63,6 +63,14 @@ v.reserve(100);  // 只是预留空间，不构造元素
 
 ---
 
+# string
+
+## string的实现
+
+string接口见[ `string.h` ](./Code/string/string.h)
+
+string具体函数实现见[ `string.cpp` ](./Code/string/string.cpp)
+
 # 函数
 
 ## `std::sort`
