@@ -17,6 +17,12 @@ STL 分为多个组件，包括容器（Containers）、迭代器（Iterators）
 
 # vector
 
+## vector的实现
+
+vector接口见[ `vector.h` ](./Code/vector/vector.h)
+
+vector具体函数实现见[ `vector.cpp` ](./Code/vector/vector.cpp)
+
 ## `std::vector::resize()` 和 `std::vector::reserve()` 
 
 ---
@@ -56,11 +62,7 @@ v.reserve(100);  // 只是预留空间，不构造元素
 此时 `v.size() == 0`，你不能访问 `v[0]`，否则是**未定义行为**。你只能通过 `push_back()` 等方式添加元素。
 
 ---
-
-### 总结一句话
-
 > **`resize()` 是改变实际大小并构造元素，`reserve()` 是预留内存不构造元素**。
-
 ---
 
 # string

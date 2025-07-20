@@ -8,6 +8,7 @@
         "type_traits": "cpp",
         "xmemory": "cpp",
         "xstring": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "xlocale": "cpp"
     }
 }
