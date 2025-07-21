@@ -19,9 +19,8 @@ STL 分为多个组件，包括容器（Containers）、迭代器（Iterators）
 
 ## vector的实现
 
-vector接口见[ `vector.h` ](./Code/vector/vector.h)
-
-vector具体函数实现见[ `vector.cpp` ](./Code/vector/vector.cpp)
+- vector接口见[ `vector.h` ](./Code/vector/vector.h)
+- vector具体函数实现见[ `vector.cpp` ](./Code/vector/vector.cpp)
 
 ## `std::vector::resize()` 和 `std::vector::reserve()` 
 
@@ -48,7 +47,7 @@ std::vector<int> v;
 v.resize(5);  // v.size() == 5，包含5个默认值为0的元素
 ```
 
-你现在可以访问 `v[0]` 到 `v[4]`，因为这些元素真的存在了。
+可以访问 `v[0]` 到 `v[4]`，因为这些元素真的存在了。
 
 ---
 
@@ -69,9 +68,21 @@ v.reserve(100);  // 只是预留空间，不构造元素
 
 ## string的实现
 
-string接口见[ `string.h` ](./Code/string/string.h)
+- string接口见[ `string.h` ](./Code/string/string.h)
+- string具体函数实现见[ `string.cpp` ](./Code/string/string.cpp)
 
-string具体函数实现见[ `string.cpp` ](./Code/string/string.cpp)
+# list
+
+- 可在常数范围内在任意位置进行插入和删除的序列式容器，并且该容器可以前后双向迭代。
+- 底层是**双向链表结构**，双向链表中每个元素存储在互不相关的独立结点当中，在结点中通过指针指向其前一个元素和后一个元素。
+- list与forward_list相似，不同在于forward_list是单链表，只能进行单方向迭代。
+- 在任意位置进行插入、删除元素的执行效率更高。
+- list和forward_list最大的缺陷是不支持在任意位置的随机访问，其次，list还需要一些额外的空间，以保存每个结点之间的关联信息（对于存储的类型较小元素来说这可能是一个重要的因素）。
+
+## list的实现
+
+- list接口见[ `list.h` ](./Code/list/list.h)
+- list具体函数实现[ `list.cpp` ](./Code/list/list.cpp)
 
 # 函数
 
