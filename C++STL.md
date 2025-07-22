@@ -19,8 +19,7 @@ STL 分为多个组件，包括容器（Containers）、迭代器（Iterators）
 
 ## vector的实现
 
-- vector接口见[ `vector.h` ](./Code/vector/vector.h)
-- vector具体函数实现见[ `vector.cpp` ](./Code/vector/vector.cpp)
+- vector接口与具体函数实现见[ `vector.h` ](./Code/vector/vector.h)
 
 ## `std::vector::resize()` 和 `std::vector::reserve()` 
 
@@ -81,8 +80,27 @@ v.reserve(100);  // 只是预留空间，不构造元素
 
 ## list的实现
 
-- list接口见[ `list.h` ](./Code/list/list.h)
-- list具体函数实现[ `list.cpp` ](./Code/list/list.cpp)
+- list接口与具体函数实现见[ `list.h` ](./Code/list/list.h)
+
+# stack 与 queue
+
+- stack 先入后出
+- queue 先入先出
+- stack与queue是容器适配器，因为stack和queue只是对其他容器的接口进行了包装，STL中stack和queue默认使用deque容器
+- 在stack和queue的类模板声明中，模板参数有两个，第一个是stack和queue当中所存储的元素类型，而另一个是指定使用的容器类型。当不指定使用何种容器的情况下，stack和queue都默认使用deque作为指定容器。
+
+```cpp
+template<class T, class Container = deque<T>> class stack;
+template<class T, class Container = deque<T>> class queue;
+```
+
+## stack的实现
+
+- stack接口与具体函数见[ `stack.h` ](./Code/stack/stack.h)
+
+## queue的实现
+
+- queue接口与具体函数[ `queue.h` ](./Code/queue/queue.h)
 
 # 函数
 
