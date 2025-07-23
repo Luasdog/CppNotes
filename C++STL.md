@@ -102,6 +102,21 @@ template<class T, class Container = deque<T>> class queue;
 
 - queue接口与具体函数[ `queue.h` ](./Code/queue/queue.h)
 
+# priority_queue
+
+优先级队列默认是大堆，即顶部的元素是最大值。底层采用vector容器。
+
+```cpp
+priority_queue<int> q; // 默认大堆
+priority_queue<int, vector<int>, less<int>> q1; // 大堆
+priority_queue<int, vector<int>, greater<int>> q2; // 小堆
+```
+
+## priority_queue的实现
+
+- priority_queue接口与具体函数见[ `priority_queue.h` ](/Code/priority_queue/priority_queue.h)
+
+
 # 函数
 
 ## `std::sort`
